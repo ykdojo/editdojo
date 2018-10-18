@@ -37,12 +37,12 @@ pipenv shell
 python manage.py makemigrations
 python manage.py migrate
 ```
-5. Run the server:
+6. Run the server:
 
 ```sh
 python manage.py runserver <PORT>
 ```
-6. Start the application opening the link shown in your terminal on a browser.
+7. Start the application opening the link shown in your terminal on a browser.
 
 ## Resources
 This is a part of the series of YouTube videos demonstrating how to build a real startup using Python and Javascript.
