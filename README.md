@@ -16,7 +16,8 @@ Initially the app will be based on twitter, that is, users will be editing tweet
 
 ## Installation
 These are the steps to install the project on your machine. What we actually need is a virtual environment running Django version 2.1.
-1. Install python on your machine. Mac and Ubuntu have it pre-installed. For Windows head on to https://www.python.org/downloads/.
+1. Install python on your machine. Mac and Ubuntu have it pre-installed. NOTE: you might have Python 2 on your Mac or Linux. If so, make sure to download Python 3.
+For Windows head on to https://www.python.org/downloads/.
 2. Using pip3, the package manager for python, install pipenv using the command below in the terminal.
 
 ```
