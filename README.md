@@ -47,4 +47,5 @@ This is a part of the series of YouTube videos demonstrating how to build a real
 - The free chapters of this book: https://djangoforbeginners.com/
 
 ## Credits
-- [ykdojo](https://github.com/ykdojo)
+- This project was initiated by: [ykdojo](https://github.com/ykdojo)
+- This README was created by: [vvyomjjain](https://github.com/vvyomjjain)
