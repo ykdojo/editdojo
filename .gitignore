@@ -111,3 +111,6 @@ dmypy.json
 
 # Env file
 .env
+
+# Mac
+.DS_Store
