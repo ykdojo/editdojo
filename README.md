@@ -41,6 +41,8 @@ python manage.py migrate
 
 ```sh
 python manage.py runserver <PORT>
+OR
+python manage.py runserver
 ```
 7. Start the application opening the link shown in your terminal on a browser.
 
