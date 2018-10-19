@@ -20,33 +20,47 @@ These are the steps to install the project on your machine. What we actually nee
 For Windows head on to https://www.python.org/downloads/.
 2. Using pip3, the package manager for python, install pipenv using the command below in the terminal.
 
-```
+```sh
 pip3 install pipenv
 ```
 3. Open terminal in the folder containing the project files. Install Django version 2.1 in the virtual environment with the following command.
 
-```
+```sh
 pipenv install django==2.1
 ```
 4. Go into the virtual environment: 
-```
+```sh
 pipenv shell
 ```
-5. Run the server:
+5. Apply migrations
+```sh
+python manage.py makemigrations
+python manage.py migrate
+```
+6. Run the server:
 
+```sh
+python manage.py runserver <PORT>
 ```
-python manage.py runserver
-```
-6. Start using the app by opening the link shown in the terminal on your browser.
+7. Start the application opening the link shown in your terminal on a browser.
 
 ## Resources
-This is a part of the series of YouTube videos demonstrating how to build a real startup using Python and JavaScipt. These are the resources helpful for this project:
+This is a part of the series of YouTube videos demonstrating how to build a real startup using Python and Javascript.
+Useful resources for this project:
 - YouTube video link: https://www.youtube.com/watch?v=UyQn0BhVqNU
-- Our Slack group and source code: https://www.csdojo.io/edit
+- Slack group and more info: https://www.csdojo.io/edit
 - Waiting list for this app: https://www.csdojo.io/wait
-- The recommended beginner Django book: https://csdojo.io/dj
-- The free chapters of this book: https://djangoforbeginners.com/
+- Recommended Django book for beginners: https://gumroad.com/l/aFiMm
+- The free chapters of the book: https://djangoforbeginners.com/
 
-## Credits
-- This project was initiated by: [ykdojo](https://github.com/ykdojo)
-- This README was created by: [vvyomjjain](https://github.com/vvyomjjain)
+### Created by
+The project was started by: YK Sugi
+
+Contact with him here:
+- [Twitter](https://twitter.com/ykdojo)
+- [Instagram](https://www.instagram.com/ykdojo/)
+- [Website](https://www.csdojo.io)
+- [Youtube](https://www.youtube.com/channel/UCxX9wt5FWQUAAz4UrysqK9A)
+
+### Contributors
+See: [CONTRIBUTORS](https://github.com/ykdojo/editdojo/graphs/contributors)
