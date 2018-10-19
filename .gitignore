@@ -114,3 +114,9 @@ dmypy.json
 
 # Mac
 .DS_Store
+
+# Visual Studio Code
+.vscode
+
+# Vim
+*.swp
