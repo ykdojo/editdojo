@@ -52,17 +52,12 @@ Useful resources for this project:
 - YouTube video link: https://www.youtube.com/watch?v=UyQn0BhVqNU
 - Slack group and more info: https://www.csdojo.io/edit
 - Waiting list for this app: https://www.csdojo.io/wait
-- Recommended Django book for beginners: https://gumroad.com/l/aFiMm
-- The free chapters of the book: https://djangoforbeginners.com/
+- Recommended Django book for beginners: https://djangoforbeginners.com/
 
 ### Created by
 The project was started by: YK Sugi
 
-Contact with him here:
-- [Twitter](https://twitter.com/ykdojo)
-- [Instagram](https://www.instagram.com/ykdojo/)
-- [Website](https://www.csdojo.io)
-- [Youtube](https://www.youtube.com/channel/UCxX9wt5FWQUAAz4UrysqK9A)
+If you have any questions related to this project, please contact him on our Slack group.
 
 ### Contributors
 See: [CONTRIBUTORS](https://github.com/ykdojo/editdojo/graphs/contributors)
