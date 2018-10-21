@@ -55,7 +55,7 @@ Useful resources for this project:
 - Recommended Django book for beginners: https://djangoforbeginners.com/
 
 ### Created by
-The project was started by: YK Sugi
+The project was started by: YK Sugi. He's the guy who's running CS Dojo, a programming education YouTube channel.
 
 If you have any questions related to this project, please contact him on our Slack group.
 
