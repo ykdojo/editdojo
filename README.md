@@ -32,19 +32,25 @@ pipenv install django==2.1
 ```sh
 pipenv shell
 ```
-5. Apply migrations
+5. Create a new Django project:
+```sh
+django-admin startproject editdojo_project .
+```
+(Note: Don't forget the .(dot) which represents the current diretory in UNIX)
+
+6. Apply migrations
 ```sh
 python manage.py makemigrations
 python manage.py migrate
 ```
-6. Run the server:
+7. Run the server:
 
 ```sh
 python manage.py runserver <PORT>
 OR
 python manage.py runserver
 ```
-7. Start the application opening the link shown in your terminal on a browser.
+8. Start the application opening the link shown in your terminal on a browser.
 
 ## Resources
 This is a part of the series of YouTube videos demonstrating how to build a real startup using Python and Javascript.
