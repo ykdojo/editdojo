@@ -58,7 +58,8 @@ Useful resources for this project:
 - YouTube video link: https://www.youtube.com/watch?v=UyQn0BhVqNU
 - Slack group and more info: https://www.csdojo.io/edit
 - Waiting list for this app: https://www.csdojo.io/wait
-- Recommended Django book for beginners: https://djangoforbeginners.com/
+- Recommended Django book for beginners: http://csdojo.io/dj (It's a referral link. When you buy a copy from this link, YK gets paid a little bit - which will help him continue working on this project full-time.)
+- Sample chapters of this book: https://djangoforbeginners.com/
 
 ### Created by
 The project was started by: YK Sugi. He's the guy who's running CS Dojo, a programming education YouTube channel.
