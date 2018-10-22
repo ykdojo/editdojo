@@ -20,5 +20,5 @@ from pages.views import homePageView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', homePageView),
+    path('sayHello/', homePageView),
 ]
