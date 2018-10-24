@@ -123,3 +123,6 @@ dmypy.json
 
 # Pycharm
 .idea/
+
+# twitter bot configuration
+bot/config.json
