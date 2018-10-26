@@ -14,31 +14,40 @@ The app will function in these steps:
 
 Initially the app will be based on twitter, that is, users will be editing tweets. Eventually, you will able to use this app without using Twitter at all!
 
-## Installation
-These are the steps to install the project on your machine. What we actually need is a virtual environment running Django version 2.1.
-1. Install python on your machine. Mac and Ubuntu have it pre-installed. NOTE: you might have Python 2 on your Mac or Linux. If so, make sure to download Python 3.
-For Windows head on to https://www.python.org/downloads/.
-2. Using pip3, the package manager for python, install pipenv using the command below in the terminal.
+## Pre-requisites
+We would need following installed in our system before we start with setting up the project in local machine.
+1. Git - This is needed as a version control system. If you don't have this preinstalled in local machine, visit https://git-scm.com/downloads and setup git on local.
+2. Python 3 - We are using Python as a programming language in this project. Mac and Ubuntu have it pre-installed. NOTE: you might have Python 2 on your Mac or Ubuntu. If so, make sure to download Python 3.
+
+## Local Setup
+1. Using pip3, the package manager for python, install pipenv using the command below in the terminal.
 
 ```sh
 pip3 install pipenv
 ```
-3. Open terminal in the folder containing the project files. Install Django version 2.1 in the virtual environment with the following command.
+2. Clone this repository into local system and change the directory.
+   
+```sh
+git clone https://github.com/ykdojo/editdojo.git
+cd editdojo/
+```
+3. Install pip3 - the package manager for python, using the command below in the terminal.
+
+```sh
+pip3 install pipenv
+```
+4. Go into the virtual environment: 
+   
+```sh
+pipenv shell
+```
+5. Install Django version 2.1 in the virtual environment with the following command.
 
 ```sh
 pipenv install django==2.1
 ```
-4. Go into the virtual environment: 
-```sh
-pipenv shell
-```
-5. Create a new Django project:
-```sh
-django-admin startproject editdojo_project .
-```
-(Note: Don't forget the .(dot) which represents the current diretory in UNIX)
-
 6. Apply migrations
+   
 ```sh
 python manage.py makemigrations
 python manage.py migrate
