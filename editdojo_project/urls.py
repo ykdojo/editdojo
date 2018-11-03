@@ -24,4 +24,5 @@ urlpatterns = [
     path('todo/', todoView),
     path('addTodo/', addTodo),
     path('deleteTodo/<int:todo_id>/', deleteTodo),
+    path('', hommeView),
 ]
