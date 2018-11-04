@@ -1,0 +1,12 @@
+/*
+	ins & del are special tags used by htmldiff.js text difference mark library.
+*/
+ins {
+    text-decoration: none;
+    background-color: #d4fcbc;
+}
+del {
+    text-decoration: line-through;
+    background-color: #fbb6c2;
+    color: #555;
+}
