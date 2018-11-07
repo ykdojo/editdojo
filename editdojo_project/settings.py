@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
-import os
+import os, socket
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'hello',
     'todo',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -71,6 +72,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'editdojo_project.wsgi.application'
 
+# Email configuration for resetting user's passwords
+try:
+    EMAIL_USE_TLS = True
+    EMAIL_HOST = os.environ.get('EMAIL_HOST', default="stmp.gmail.com")
+    EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
+    EMAIL_PORT = os.environ.get('EMAIL_PORT', default=587)
+except socket.gaierror:
+    # If that fails, use a file based server to see the emails. DO NOT USE THIS FOR PRODUCTION, CONFIGURE YOUR OWN EMAIL SERVER ABOVE!
+    EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+    EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
