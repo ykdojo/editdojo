@@ -65,7 +65,8 @@ python manage.py runserver
 9. Set up django-allauth.
 - First, register for a Twitter developer account.
 - Then, run ``python manage.py createsuperuser`` to create an admin account.
-- Go to http://127.0.0.1:8000/admin, and register your Twitter app's info there. (More about it here: https://django-allauth.readthedocs.io/en/latest/providers.html)
+- Go to http://127.0.0.1:8000/admin, and change the default site to from example.com to 127.0.0.1. Then, register your Twitter app's info there.
+- More about this process [here](https://wsvincent.com/django-allauth-tutorial/) and [here](https://django-allauth.readthedocs.io/en/latest/providers.html).
 
 ## Resources
 This is a part of the series of YouTube videos demonstrating how to build a real startup using Python and Javascript.
