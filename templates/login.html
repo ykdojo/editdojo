@@ -1,0 +1,8 @@
+{% load socialaccount %}
+
+{% if user.is_authenticated %}
+<p>Welcome {{ user.username }}!!</p>
+<a href="/accounts/logout/">Log out</a>
+{% else %}
+<a href="{% provider_login_url 'twitter' %}">Sign Up / Sign In</a>
+{% endif %}
