@@ -46,7 +46,6 @@ INSTALLED_APPS = [
 
     'hello',
     'todo',
-    'users',
 ]
 
 MIDDLEWARE = [
