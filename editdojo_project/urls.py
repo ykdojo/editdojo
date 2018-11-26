@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from hello.views import my_view, home_view
 from todo.views import todo_view, add_todo, delete_todo
-from auth.views import login
+from users.views import login
 
 urlpatterns = [
     path('admin/', admin.site.urls),

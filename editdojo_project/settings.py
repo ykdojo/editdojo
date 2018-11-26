@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     'hello',
     'todo',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -155,3 +156,5 @@ AUTHENTICATION_BACKENDS = (
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = 'home'
+
+AUTH_USER_MODEL = 'users.CustomUser'
