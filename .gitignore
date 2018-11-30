@@ -1,3 +1,6 @@
+# Private keys here
+keys.py
+
 ### Django ###
 *.log
 *.pot
