@@ -23,11 +23,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
 
+    path('', login, name='home'),
+
+    # This one is for YK's hello world app tutorial: https://youtu.be/h7rvyDK70FA
     path('sayHello/', my_view),
 
+    # These are for YK's to-do app tutorial: https://youtu.be/ovql0Ui3n_I
     path('todo/', todo_view),
     path('addTodo/', add_todo),
     path('deleteTodo/<int:todo_id>/', delete_todo),
-
-    path('', login, name='home'),
 ]
