@@ -1,8 +1,17 @@
 {% load socialaccount %}
 
 {% if user.is_authenticated %}
-<p>Welcome {{ user.username }}!!</p>
 <a href="/accounts/logout/">Log out</a>
+<!-- TODO: fix this view later (show something
+   meaningful when the user is logged in). -->
 {% else %}
-<a href="{% provider_login_url 'twitter' %}">Sign Up / Sign In</a>
+<h3>Welcome to Edit Dojo! (Beta)</h3>
+<h4>How it works:</h4>
+<ol>
+  <li>You write tweets in the language you're learning from your Twitter account.</li>
+  <li>Native speakers of that language will edit your tweets so you can improve your writing skills.</li>
+  <li>In return, please edit other people's posts in your native tongue!</li>
+  <li>NOTE: It's currently only available for Japanese and English. If you want to practice writing in other languages, please sign up for our waiting list here: <a href="https://www.csdojo.io/wait" target="_blank">https://www.csdojo.io/wait</a></li>
+</ol>
+<a href="{% provider_login_url 'twitter' %}">Sign Up/Sign In with Twitter</a>
 {% endif %}
