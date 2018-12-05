@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import tweepy
-from .keys import * # this is for tweepy
+from .keys import * # import keys for tweepy
 from allauth.socialaccount.models import SocialAccount
 
 def login(request):
