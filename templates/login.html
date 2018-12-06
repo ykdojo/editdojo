@@ -4,9 +4,25 @@
 
 {% block content %}
   {% if user.is_authenticated %}
-  <a href="/accounts/logout/">Log out</a>
-  <!-- TODO: fix this view later (show something
-     meaningful when the user is logged in). -->
+  <div class="container">
+    <div class="card col-lg-6 col-md-6 ml-auto mr-auto">
+      <h3>Select your languages</h3>
+      <form>
+        <label for="learning">I'm learning...</label>
+        <select class="custom-select" id="learning">
+          <option>English</option>
+          <option>Japanese</option>
+        </select>
+        <label for="fluent">I'm fluent in...</label>
+        <select class="custom-select" id="learning">
+          <option>English</option>
+          <option>Japanese</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <p><a href="/accounts/logout/">Log out</a></p>
+    </div>
+  </div>
   {% else %}
   <div class="container">
     <div class="card col-lg-6 col-md-6 ml-auto mr-auto">
