@@ -41,30 +41,45 @@
         languageListHTML += `<option>${language}</option>`
       });
       let selectHTML = 
-        `<select class="custom-select ed-select" id="${learningOrFluent}${id}">
+        `<select class="custom-select ed-select" id="${learningOrFluent}${id}"
+          style="display:none;">
           <option>Select Additional Language (if any)</option>
           ${languageListHTML}
         </select>`;
       return selectHTML;
     }
 
-    function attachSelectionListner(learningOrFluent){
+    function attachSelectionListener(learningOrFluent){
       $(`#${learningOrFluent}1`).on('change', function(){
-        let selectedLanguage = this.value;
+        $(this).nextAll().animate({height:0, padding:0}, 100);
+        let animatePromise = $(this).nextAll().promise();
 
-        // make a deep copy of languageList
-        let newLanguageList = JSON.parse(JSON.stringify(languageList));
-        // remove selectedLanguage from the new list
-        let i = newLanguageList.indexOf(selectedLanguage);
-        newLanguageList.splice(i, 1);
+        animatePromise.done(() => {
+          // First, remove the faded-out content.
+          $(this).nextAll().remove();
 
-        let selectHTML = generateSelectHTML(learningOrFluent, 2, newLanguageList);
-        $(`#${learningOrFluent}-select`).append(selectHTML);
+          let selectedLanguage = this.value;
+          // Then, if the user has selected "Select Langauge (if any)", do nothing.
+          if(!languageList.includes(selectedLanguage)){
+            return;
+          }
+
+          // Otherwise, make a deep copy of languageList
+          let newLanguageList = JSON.parse(JSON.stringify(languageList));
+          // Then, remove selectedLanguage from the new list
+          let i = newLanguageList.indexOf(selectedLanguage);
+          newLanguageList.splice(i, 1);
+
+          // Finally, generate select HTML from the new list.
+          let selectHTML = generateSelectHTML(learningOrFluent, 2, newLanguageList);
+          $(`#${learningOrFluent}-select`).append(selectHTML);
+          $(this).nextAll().fadeIn(100);
+        });
       });
     };
 
     ['learning', 'fluent'].forEach(learningOrFluent => {
-      attachSelectionListner(learningOrFluent);
+      attachSelectionListener(learningOrFluent);
     });
   </script>
   {% else %}
