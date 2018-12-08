@@ -29,6 +29,44 @@
       <p></p>
     </div>
   </div>
+  <script>
+    let languageList = ['English', 'Japanese'];
+
+    // given learningOrFluent, the new id for the selection element,
+    // and a new language list, this generates and returns a new HTML snippet
+    // for language selection.
+    function generateSelectHTML(learningOrFluent, id, newLanguageList){
+      let languageListHTML = '';
+      newLanguageList.forEach(language => {
+        languageListHTML += `<option>${language}</option>`
+      });
+      let selectHTML = 
+        `<select class="custom-select ed-select" id="${learningOrFluent}${id}">
+          <option>Select Additional Language (if any)</option>
+          ${languageListHTML}
+        </select>`;
+      return selectHTML;
+    }
+
+    function attachSelectionListner(learningOrFluent){
+      $(`#${learningOrFluent}1`).on('change', function(){
+        let selectedLanguage = this.value;
+
+        // make a deep copy of languageList
+        let newLanguageList = JSON.parse(JSON.stringify(languageList));
+        // remove selectedLanguage from the new list
+        let i = newLanguageList.indexOf(selectedLanguage);
+        newLanguageList.splice(i, 1);
+
+        let selectHTML = generateSelectHTML(learningOrFluent, 2, newLanguageList);
+        $(`#${learningOrFluent}-select`).append(selectHTML);
+      });
+    };
+
+    ['learning', 'fluent'].forEach(learningOrFluent => {
+      attachSelectionListner(learningOrFluent);
+    });
+  </script>
   {% else %}
   <div class="container">
     <div class="card col-lg-6 col-md-6 ml-auto mr-auto">
