@@ -52,7 +52,12 @@ pipenv install django==2.1
 python manage.py makemigrations
 python manage.py migrate
 ```
-7. Run the server:
+7. Go to Users/keys_format.py
+- Rename file to keys.py.
+- Add the file name to gitignore.
+- Add your Twitter API credentials.
+
+8. Run the server:
 
 ```sh
 python manage.py runserver <PORT>
@@ -60,9 +65,9 @@ OR
 python manage.py runserver
 ```
 
-8. Start the application opening the link shown in your terminal on a browser.
+9. Start the application opening the link shown in your terminal on a browser.
 
-9. Set up django-allauth.
+10. Set up django-allauth.
 - First, register for a Twitter developer account.
 - Then, run ``python manage.py createsuperuser`` to create an admin account.
 - Go to http://127.0.0.1:8000/admin, and change the default site to from example.com to 127.0.0.1. Then, register your Twitter app's info there.
