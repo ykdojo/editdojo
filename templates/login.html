@@ -87,19 +87,146 @@
     });
   </script>
   {% else %}
-  <div class="container">
-    <div class="card col-lg-6 col-md-6 ml-auto mr-auto">
-      <h3>Welcome to Edit Dojo! (Beta)</h3>
-      <h4>How it works:</h4>
-      <ol>
-        <li>You write tweets in the language you're learning from your Twitter account.</li>
-        <li>Native speakers of that language will edit your tweets so you can improve your writing skills.</li>
-        <li>When you get an edit, you will receive a tweet from <a href="https://twitter.com/editdojo" target="_blank">@EditDojo</a>.</li>
-        <li>In return, please edit other people's posts in your native tongue!</li>
-        <li>NOTE: It's currently only available for Japanese and English. If you want to practice writing in other languages, please sign up for our waiting list here: <a href="https://www.csdojo.io/wait" target="_blank">https://www.csdojo.io/wait</a></li>
-      </ol>
-      <a href="{% provider_login_url 'twitter' %}">Sign Up/Sign In with Twitter</a>
+  <nav
+    class="navbar navbar-transparent fixed-top navbar-expand-lg"
+    color-on-scroll="100"
+    id="sectionsNav"
+    style="position: absolute;"
+  >
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" href="#">Edit Dojo</a>
+        <!-- <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="sr-only">Toggle</span>
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+      </div>
+      <div class="collapse navbar-collapse"></div>
+    </div>
+  </nav>
+  <div
+    class="page-header header-filter"
+    data-parallax="true"
+    style="background-image: url('static/images/bg1.jpg')"
+  >
+  <!-- ImageSource: https://unsplash.com/photos/gwI6TcYPEUA by Robert V. Ruggiero-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 ml-auto mr-auto text-center">
+          <h1 style="font-size: 60px; margin: 0;">
+            Welcome to Edit Dojo!
+            <span style="font-size:medium;">(Beta)</span>
+          </h1>
+
+          <h3 style="margin: 0px 0 40px 0;">Be a better writer.</h3>
+          <a class="btn btn-primary btn-raised btn-lg" href="#detail">
+            <i
+              class="fa fa-chevron-circle-down"
+              style="padding-right: 8px;"
+            ></i
+            >LEARN MORE
+          </a>
+        </div>
+      </div>
     </div>
   </div>
+
+  <div class="main main-raised">
+    <div class="container">
+      <div class="section text-center" style="padding-top: 0; padding-bottom: 20px;">
+        <div class="row">
+          <div class="col-md-7 ml-auto mr-auto">
+            <div class="section" id="detail">
+              <h3 class="title">How it works</h3>
+              <ol class="text-left">
+                <li class="title" style="margin:0;">Write tweets</li>
+                <p style="font-size:medium;">
+                  You write tweets in the language you're learning from your
+                  Twitter account.
+                </p>
+                <li class="title" style="margin:0;">Get feedback</li>
+                <p style="font-size:medium;">
+                  Native speakers of that language will edit your tweets.
+                  When you get an edit, you will receive a tweet from <a href="https://twitter.com/EditDojo" target="_blank">@EditDojo</a>.
+                </p>
+                <li class="title" style="margin:0;">Help others</li>
+                <p style="font-size:medium;">
+                  In return, please edit other people's tweets in your native
+                  tongue!
+                </p>
+              </ol>
+              <a
+                href="{% provider_login_url 'twitter' %}"
+                class="btn btn-primary btn-raised btn-lg"
+                style="margin:5px 0 16px 0;"
+              >
+                <i class="fa fa-twitter"></i> Sign up / sign in with Twitter
+              </a>
+              <p class="text-left description" style="margin-top: 20px;">
+                NOTE: It's currently only available for Japanese and English.
+                If you want to practice writing in other languages, please
+                sign up for our waiting list here: <a
+                  href="https://www.csdojo.io/wait" target="_blank"
+                  >https://www.csdojo.io/wait</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer footer-default"></footer>
+
+  <!-- Core JS Files -->
+  <script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
+  <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
+  <script
+    src="assets/js/core/bootstrap-material-design.min.js"
+    type="text/javascript"
+  ></script>
+  <script src="assets/js/plugins/moment.min.js"></script>
+  <!--
+    Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker
+  -->
+  <script
+    src="assets/js/plugins/bootstrap-datetimepicker.js"
+    type="text/javascript"
+  ></script>
+  <!--
+    Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/
+  -->
+  <script
+    src="assets/js/plugins/nouislider.min.js"
+    type="text/javascript"
+  ></script>
+  <!--
+    Control Center for Material Kit: parallax effects, scripts for the example pages etc
+  -->
+  <script
+    src="assets/js/material-kit.js?v=2.0.5"
+    type="text/javascript"
+  ></script>
+  <script>
+    $(function() {
+      $('a[href^="#"]').click(function() {
+        var speed = 500;
+        var href = $(this).attr("href");
+        var target = $(href == "#" || href == "" ? "html" : href);
+        var position = target.offset().top;
+        $("html, body").animate({ scrollTop: position }, speed, "swing");
+        return false;
+      });
+    });
+  </script>
   {% endif %}
 {% endblock content %}
