@@ -4,9 +4,6 @@ from django.db import models
 class CustomUserManager(UserManager):
     pass
 
-class CustomUser(AbstractUser):
-    objects = CustomUserManager()
-
 class Language(models.Model):
     # Representation of this language in English.
     # For example, "Japanese" or "Spanish".
@@ -22,3 +19,8 @@ class Language(models.Model):
 
     class Meta:
         ordering = ('english_representation',)
+
+class CustomUser(AbstractUser):
+    objects = CustomUserManager()
+    learning_languages = models.ManyToManyField(Language, related_name="learning_users")
+    fluent_languages = models.ManyToManyField(Language, related_name="fluent_users")
