@@ -1,6 +1,10 @@
 # Edit Dojo
 A web app to improve writing skills in any language.
 
+## Screenshots
+![Screenshot 1](landing_page_sample_1.jpg)
+![Screenshot 2](landing_page_sample_2.jpg)
+
 ## Inspiration
 The inspiration for this came from the lack of these kind of resources. You can find a ton of resources to master reading, listening or speaking a language. But when it comes to writing, there simply aren't much. 
 
