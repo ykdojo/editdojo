@@ -19,7 +19,7 @@ The app will function in these steps:
 Initially the app will be based on twitter, that is, users will be editing tweets. Eventually, you will able to use this app without using Twitter at all!
 
 ## Waiting list
-If you'd like to get an email when this website/app is ready, please sign up here: https://www.csdojo.io/wait
+If you'd like to get an email when this website/app is ready, please sign up to our waitlist here: https://www.csdojo.io/wait
 
 ## Pre-requisites
 We would need following installed in our system before we start with setting up the project in local machine.
