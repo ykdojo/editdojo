@@ -41,18 +41,16 @@ pip3 install pipenv
 ```sh
 pipenv shell
 ```
-5. Install Django version 2.1 in the virtual environment with the following command.
-
-```sh
-pipenv install django==2.1
-```
-6. Apply migrations
+5. Apply migrations
    
 ```sh
 python manage.py makemigrations
 python manage.py migrate
+python manage.py loaddata languages.yaml
+# NOTE: you can produce the same data in languages.yaml with
+# python manage.py dumpdata users.Language --format=yaml > languages.yaml
 ```
-7. Run the server:
+6. Run the server:
 
 ```sh
 python manage.py runserver <PORT>
@@ -60,12 +58,13 @@ OR
 python manage.py runserver
 ```
 
-8. Start the application opening the link shown in your terminal on a browser.
+7. Start the application opening the link shown in your terminal on a browser.
 
-9. Set up django-allauth.
+8. Set up django-allauth.
 - First, register for a Twitter developer account.
 - Then, run ``python manage.py createsuperuser`` to create an admin account.
 - Go to http://127.0.0.1:8000/admin, and change the default site to from example.com to 127.0.0.1. Then, register your Twitter app's info there.
+- Also, make sure to set up keys.py (as explained above).
 - More about this process [here](https://wsvincent.com/django-allauth-tutorial/) and [here](https://django-allauth.readthedocs.io/en/latest/providers.html).
 
 ## Resources
