@@ -3,34 +3,8 @@
 {% load socialaccount %}
 
 {% block content %}
-  {% if user.is_authenticated %}
-  <div class="container">
-    <div class="card col-lg-6 col-md-6 ml-auto mr-auto">
-      <h3>Select your languages</h3>
-      <form>
-        <label for="learning">I'm learning...</label>
-        <div id="learning-select">
-          <select class="custom-select ed-select" id="learning1">
-            <option>Select Your Language</option>
-            <option>English</option>
-            <option>Japanese</option>
-          </select>
-        </div>
-        <label for="fluent">I'm fluent in...</label>
-        <div id="fluent-select">
-          <select class="custom-select ed-select" id="fluent1">
-            <option>Select Your Language</option>
-            <option>English</option>
-            <option>Japanese</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-      <p></p>
-    </div>
-  </div>
-  <script src="static/js/language_selection.js" type="text/javascript"></script>
-  {% else %}
+  <!-- NOTE: the assumption of this template is that
+             the user is not logged in yet.-->
   <nav
     class="navbar navbar-transparent fixed-top navbar-expand-lg"
     color-on-scroll="100"
@@ -143,5 +117,4 @@
       });
     });
   </script>
-  {% endif %}
 {% endblock content %}

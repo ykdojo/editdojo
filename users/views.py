@@ -10,10 +10,14 @@ def login(request):
     if not current_user.is_authenticated:
         return render(request, 'login.html')
 
+    # If the user is authenticated, first, follow them on Twitter.
+    # TODO: store some info about if we already follow them or not.
     twitter_account = SocialAccount.objects.filter(user = current_user)[0]
     auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
     auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
     api = tweepy.API(auth)
     api.create_friendship(twitter_account.uid)
-    # TODO: store some info about if we already follow them or not.
-    return render(request, 'login.html')
+
+    # Then, show them the language selection page
+    # TODO: Only show this if they haven't selected languages yet.
+    return render(request, 'language_selection.html')
