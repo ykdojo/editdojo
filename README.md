@@ -2,8 +2,8 @@
 A web app to improve writing skills in any language.
 
 ## Screenshots
-![Screenshot 1](landing_page_sample_1.jpg)
-![Screenshot 2](landing_page_sample_2.jpg)
+![Screenshot 1](landing_page_sample_1.png)
+![Screenshot 2](landing_page_sample_2.png)
 
 ## Inspiration
 The inspiration for this came from the lack of these kind of resources. You can find a ton of resources to master reading, listening or speaking a language. But when it comes to writing, there simply aren't much. 
@@ -17,6 +17,9 @@ The app will function in these steps:
 5. Everyone is happy.
 
 Initially the app will be based on twitter, that is, users will be editing tweets. Eventually, you will able to use this app without using Twitter at all!
+
+## Waiting list
+If you'd like to get an email when this website/app is ready, please sign up here: https://www.csdojo.io/wait
 
 ## Pre-requisites
 We would need following installed in our system before we start with setting up the project in local machine.
