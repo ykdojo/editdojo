@@ -50,7 +50,11 @@ python manage.py loaddata languages.yaml
 # NOTE: you can produce the same data in languages.yaml with
 # python manage.py dumpdata users.Language --format=yaml > languages.yaml
 ```
-6. Run the server:
+6. Go to Users/keys_format.py
+- Copy this file to a new file called keys.py.
+- Add your Twitter API credentials in keys.py.
+
+7. Run the server:
 
 ```sh
 python manage.py runserver <PORT>
@@ -58,9 +62,9 @@ OR
 python manage.py runserver
 ```
 
-7. Start the application opening the link shown in your terminal on a browser.
+8. Start the application opening the link shown in your terminal on a browser.
 
-8. Set up django-allauth.
+9. Set up django-allauth.
 - First, register for a Twitter developer account.
 - Then, run ``python manage.py createsuperuser`` to create an admin account.
 - Go to http://127.0.0.1:8000/admin, and change the default site to from example.com to 127.0.0.1. Then, register your Twitter app's info there.
