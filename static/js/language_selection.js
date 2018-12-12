@@ -11,7 +11,7 @@ function generateSelectHTML(learningOrFluent, id, newLanguageList){
     languageListHTML += `<option>${language}</option>`
   });
   let selectHTML = 
-    `<select class="custom-select ed-select" id="${learningOrFluent}${id}">
+    `<select class="custom-select ed-select" name="${learningOrFluent}${id}">
       <option>Select Additional Language (if any)</option>
       ${languageListHTML}
     </select>`;

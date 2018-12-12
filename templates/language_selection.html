@@ -7,18 +7,20 @@
   <div class="container">
     <div class="card col-lg-6 col-md-6 ml-auto mr-auto">
       <h3>Select your languages</h3>
-      <form>
-        <label for="learning">I'm learning...</label>
+      <!-- DOING NOW: print the results of this form
+                      to see what it looks like -->
+      <form action="/selectLanguages/" method="post">{% csrf_token %}
+        <label for="learning-select">I'm learning...</label>
         <div id="learning-select">
-          <select class="custom-select ed-select" id="learning1">
+          <select class="custom-select ed-select" name="learning1" id="learning1">
             <option>Select Your Language</option>
             <option>English</option>
             <option>Japanese</option>
           </select>
         </div>
-        <label for="fluent">I'm fluent in...</label>
+        <label for="fluent-select">I'm fluent in...</label>
         <div id="fluent-select">
-          <select class="custom-select ed-select" id="fluent1">
+          <select class="custom-select ed-select" name="fluent1" id="fluent1">
             <option>Select Your Language</option>
             <option>English</option>
             <option>Japanese</option>

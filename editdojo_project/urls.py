@@ -17,13 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 from hello.views import my_view, home_view
 from todo.views import todo_view, add_todo, delete_todo
-from users.views import login
+from users.views import login, select_languages
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
 
     path('', login, name='home'),
+    path('selectLanguages/', select_languages),
 
     # This one is for YK's hello world app tutorial: https://youtu.be/h7rvyDK70FA
     path('sayHello/', my_view),
