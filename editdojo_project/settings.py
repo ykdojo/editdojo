@@ -44,9 +44,11 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.twitter',
 
-    'hello',
-    'todo',
-    'users',
+    'main', # the main app for this project
+    'users', # the app for handling users and user-related data
+
+    'hello', # an app for CS Dojo's hello world tutorial
+    'todo', # an app for CS Dojo's to-do app tutorial
 ]
 
 MIDDLEWARE = [
