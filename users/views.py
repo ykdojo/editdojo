@@ -5,7 +5,7 @@ from .keys import * # import keys for tweepy
 from allauth.socialaccount.models import SocialAccount
 from .models import Language
 
-def login(request):
+def home(request):
     current_user = request.user
     if not current_user.is_authenticated:
         return render(request, 'login.html')
