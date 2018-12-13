@@ -19,4 +19,5 @@ def home(request):
 
     # Then, show them the signup flow, including language selection.
     # TODO: Only show this if they haven't selected languages yet.
+    # (use the finished_signup_flow() function)
     return HttpResponseRedirect('/signup/')

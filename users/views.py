@@ -2,6 +2,16 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .models import Language
 
+# returns True if the user has already finished the signup flow.
+def finished_signup_flow(user):
+    if not user.is_authenticated:
+        return False
+    if len(user.learning_languages.all()) < 1:
+        return False
+    if len(user.fluent_languages.all()) < 1:
+        return False
+    return True
+
 # Hanlde the signup flow
 def signup_flow(request):
     current_user = request.user
@@ -9,6 +19,8 @@ def signup_flow(request):
         return HttpResponseRedirect('/')
     # TODO: If the user has already finished the signup flow,
     # then just redirect to root.
+    if finished_signup_flow(current_user):
+        return HttpResponseRedirect('/languagesSelected/') # TODO: change this to root
     return render(request, 'language_selection.html')
 
 # Handle the POST request for selecting langauges
