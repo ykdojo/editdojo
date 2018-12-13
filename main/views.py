@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 import tweepy
 from users.keys import * # import keys for tweepy
+from users.views import finished_signup_flow
 from allauth.socialaccount.models import SocialAccount
 
 def home(request):
@@ -18,6 +19,7 @@ def home(request):
     api.create_friendship(twitter_account.uid)
 
     # Then, show them the signup flow, including language selection.
-    # TODO: Only show this if they haven't selected languages yet.
-    # (use the finished_signup_flow() function)
-    return HttpResponseRedirect('/signup/')
+    if not finished_signup_flow(current_user):
+        return HttpResponseRedirect('/signup/')
+
+    return render(request, 'main.html')

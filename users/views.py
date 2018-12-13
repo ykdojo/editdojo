@@ -4,8 +4,8 @@ from .models import Language
 
 # returns True if the user has already finished the signup flow.
 def finished_signup_flow(user):
-    if not user.is_authenticated:
-        return False
+    # The assumption of this function is that the user is already signed in.
+    assert user.is_authenticated
     if len(user.learning_languages.all()) < 1:
         return False
     if len(user.fluent_languages.all()) < 1:
