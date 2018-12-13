@@ -43,7 +43,7 @@ function attachSelectionListener(learningOrFluent){
       let selectHTML = generateSelectHTML(learningOrFluent, 2, newLanguageList);
 
       // Also, add a plus button and add a listner to it.
-      $(`#${learningOrFluent}-select`).append(`<img src="static/icons/plus_sign_icon_rainbow.png" alt="Select More Languages" class="ed-plus-sign" style="display: none;">`);
+      $(`#${learningOrFluent}-select`).append(`<img src="/static/icons/plus_sign_icon_rainbow.png" alt="Select More Languages" class="ed-plus-sign" style="display: none;">`);
       $(this).nextAll().fadeIn(100);
       $(this).nextAll().on('click', function(){
         $(this).replaceWith(selectHTML);

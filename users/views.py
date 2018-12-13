@@ -18,8 +18,17 @@ def home(request):
     api = tweepy.API(auth)
     api.create_friendship(twitter_account.uid)
 
-    # Then, show them the language selection page
+    # Then, show them the signup flow, including language selection.
     # TODO: Only show this if they haven't selected languages yet.
+    return HttpResponseRedirect('/signup/')
+
+# Hanlde the signup flow
+def signup_flow(request):
+    current_user = request.user
+    if not current_user.is_authenticated:
+        return HttpResponseRedirect('/')
+    # TODO: If the user has already finished the signup flow,
+    # then just redirect to root.
     return render(request, 'language_selection.html')
 
 # Handle the POST request for selecting langauges
@@ -27,7 +36,7 @@ def select_languages(request):
     # First, make sure that the user is logged in.
     current_user = request.user
     if not current_user.is_authenticated:
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/signup/')
 
     learning_languages = []
     fluent_languages = []
@@ -64,7 +73,7 @@ def select_languages(request):
     
     # Make sure that there's at least one valid language in each category.
     if not fluent_language_set or not learning_language_set:
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/signup/')
     
     # Then, finally, add selected languages to the user's info.
     for language in learning_language_set:
@@ -74,4 +83,4 @@ def select_languages(request):
         if not language in current_user.fluent_languages.all():
             current_user.fluent_languages.add(language)
     current_user.save()
-    return HttpResponseRedirect('/languageSelected/')
+    return HttpResponseRedirect('/languagesSelected/')
