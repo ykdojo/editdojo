@@ -16121,7 +16121,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .header-filter::before {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .header-filter .container {

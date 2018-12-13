@@ -3,6 +3,8 @@
 {% load socialaccount %}
 
 {% block content %}
+<body class="sidebar-collapse">
+  <script src="static/js/core/jquery.min.js" type="text/javascript"></script>
   <!-- NOTE: the assumption of this template is that
              the user is not logged in yet.-->
   <nav
@@ -103,7 +105,22 @@
     </div>
   </div>
 
-  <!-- <footer class="footer footer-default"></footer> -->
+  <footer class="footer">
+    <div class="container">
+      <nav class="float-left">
+        <ul>
+          <!-- <li><a href="#">Give us feedback</a></li>
+          <li><a href="#">Log out</a></li> -->
+        </ul>
+      </nav>
+      <div class="float-right">
+        <ul>
+          <!-- <li><a href="#">Give us feedback</a></li>
+          <li><a href="#">Log out</a></li> -->
+        </ul>
+      </div>
+    </div>
+  </footer>
   <script>
     // A function for scrolling when a user clicks an in-page link:
     $(function() {
@@ -117,4 +134,9 @@
       });
     });
   </script>
+  <script src="static/js/language_selection.js" type="text/javascript"></script>
+  <script src="static/js/core/popper.min.js" type="text/javascript"></script>
+  <script src="static/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+  <script src="static/js/plugins/moment.min.js"></script>
+</body>
 {% endblock content %}
