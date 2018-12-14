@@ -44,7 +44,7 @@ pip3 install pipenv
 pipenv install
 pipenv shell
 ```
-3. Apply migrations
+4. Apply migrations
    
 ```sh
 python manage.py makemigrations
