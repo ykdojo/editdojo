@@ -30,7 +30,7 @@ We would need following installed in our system before we start with setting up 
 1. Clone this repository into local system and change the directory.
    
 ```sh
-git clone https://github.com/ykdojo/editdojo.git
+git clone https://github.com/ykdojo/editdojoprivate.git
 cd editdojoprivate/
 ```
 2. Install pip3 and pipenv.
