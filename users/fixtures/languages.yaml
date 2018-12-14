@@ -1,0 +1,6 @@
+- model: users.language
+  pk: 1
+  fields: {english_representation: English}
+- model: users.language
+  pk: 2
+  fields: {english_representation: Japanese}
