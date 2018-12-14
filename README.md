@@ -87,6 +87,3 @@ Useful resources for this project:
 The project was started by: YK Sugi. He's the guy who's running CS Dojo, a programming education YouTube channel.
 
 If you have any questions related to this project, please contact him on our Slack group.
-
-### Contributors
-See: [CONTRIBUTORS](https://github.com/ykdojo/editdojo/graphs/contributors)
