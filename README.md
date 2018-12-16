@@ -63,7 +63,7 @@ You can take a look at .bash_profile_sample on how to set them up.
 Then, run:
 
 ```
-python manage.py shell < setup.py
+python manage.py shell < setup_twitter.py
 ```
 
 6. Run the server:
