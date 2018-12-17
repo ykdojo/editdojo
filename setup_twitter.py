@@ -9,7 +9,11 @@ first_site.domain = os.environ['TWITTER_HOST']
 first_site.save()
 
 # More about the following here: https://django-allauth.readthedocs.io/en/latest/providers.html
-social_app = SocialApp()
+social_app = SocialApp.objects.filter(provider='twitter')
+if not social_app:
+    social_app = SocialApp()
+else:
+    social_app = social_app[0]
 social_app.provider = 'twitter'
 social_app.name = 'Twitter'
 social_app.client_id = os.environ['TWITTER_CONSUMER_KEY']
