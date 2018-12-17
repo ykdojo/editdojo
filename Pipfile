@@ -10,6 +10,7 @@ django-allauth = "*"
 tweepy = {editable = true, ref = "2efe385fc69385b57733f747ee62e6be12a1338b", git = "https://github.com/tweepy/tweepy.git"}
 pyyaml = "*"
 gunicorn = "*"
+whitenoise = "*"
 
 [dev-packages]
 
