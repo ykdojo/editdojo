@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -97,6 +98,8 @@ try:
             'PORT': os.environ.get('POSTGRES_PORT', default='5432')
         },
     }
+    db_from_env = dj_database_url.config() # this is for Heroku
+    DATABASES['default'].update(db_from_env)
 except KeyError:
     # if the environment variables for postgresql are not set we default to sqlite3
     DATABASES = {

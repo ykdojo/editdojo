@@ -11,6 +11,7 @@ tweepy = {editable = true, ref = "2efe385fc69385b57733f747ee62e6be12a1338b", git
 pyyaml = "*"
 gunicorn = "*"
 whitenoise = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
