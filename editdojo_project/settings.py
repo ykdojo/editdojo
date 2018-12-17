@@ -151,10 +151,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
-# Simplified static file serving.
-# https://warehouse.python.org/project/whitenoise/
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 # The following three constants (AUTHENTICATION_BACKENDS, SITE_ID,
 # and LOGIN_REDIRECT_URL) are for django-allauth.
 AUTHENTICATION_BACKENDS = (
