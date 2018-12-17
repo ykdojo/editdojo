@@ -4,8 +4,8 @@ import os
 
 # More about the following here: https://wsvincent.com/django-allauth-tutorial/
 first_site = Site.objects.get(pk=1)
-first_site.name = '127.0.0.1'
-first_site.domain = '127.0.0.1'
+first_site.name = os.environ['TWITTER_HOST']
+first_site.domain = os.environ['TWITTER_HOST']
 first_site.save()
 
 # More about the following here: https://django-allauth.readthedocs.io/en/latest/providers.html
