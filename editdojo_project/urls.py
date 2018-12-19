@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from users.views import select_languages, signup_flow
 from main.views import home
+from main.twitter_views import oauth_login
 
 # The following two lines are for CS Dojo's tutorials
 from hello.views import my_view, home_view
@@ -24,6 +25,7 @@ from todo.views import todo_view, add_todo, delete_todo
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/twitter/login/', oauth_login),
     path('accounts/', include('allauth.urls')),
 
     path('', home, name='home'),
