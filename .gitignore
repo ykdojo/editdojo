@@ -1,5 +1,5 @@
-# Static files
-editdojo_project/staticfiles
+# Private keys here
+keys.py
 
 ### Django ###
 *.log

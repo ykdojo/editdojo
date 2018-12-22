@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,7 +25,8 @@ SECRET_KEY = '&1h6l+9kzq2%9zmfiu=#=lj1a^t(m=a!wh5tknm)@29cx2n)dj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', 'localhost', 'editdojo.herokuapp.com']
+ALLOWED_HOSTS = []
+
 
 # Application definition
 
@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 
     'django.contrib.sites',
@@ -54,7 +53,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -97,8 +95,6 @@ try:
             'PORT': os.environ.get('POSTGRES_PORT', default='5432')
         },
     }
-    db_from_env = dj_database_url.config() # this is for Heroku
-    DATABASES['default'].update(db_from_env)
 except KeyError:
     # if the environment variables for postgresql are not set we default to sqlite3
     DATABASES = {
@@ -146,11 +142,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
 ]
 
 # The following three constants (AUTHENTICATION_BACKENDS, SITE_ID,

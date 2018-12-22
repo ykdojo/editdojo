@@ -21,11 +21,9 @@ from main.views import home
 # The following two lines are for CS Dojo's tutorials
 from hello.views import my_view, home_view
 from todo.views import todo_view, add_todo, delete_todo
-from main.twitter_views import oauth_login
 
-urlpatterns = [    
+urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/twitter/login/', oauth_login),
     path('accounts/', include('allauth.urls')),
 
     path('', home, name='home'),

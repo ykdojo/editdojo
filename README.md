@@ -27,24 +27,28 @@ We would need following installed in our system before we start with setting up 
 2. Python 3 - We are using Python as a programming language in this project. Mac and Ubuntu have it pre-installed. NOTE: you might have Python 2 on your Mac or Ubuntu. If so, make sure to download Python 3.
 
 ## Local Setup
-1. Clone this repository into local system and change the directory.
-   
-```sh
-git clone https://github.com/ykdojo/editdojoprivate.git
-cd editdojoprivate/
-```
-2. Install pip3 and pipenv.
+1. Using pip3, the package manager for python, install pipenv using the command below in the terminal.
 
 ```sh
 pip3 install pipenv
 ```
-3. Go into the virtual environment: 
+2. Clone this repository into local system and change the directory.
    
 ```sh
-pipenv install
+git clone https://github.com/ykdojo/editdojo.git
+cd editdojo/
+```
+3. Install pip3 - the package manager for python, using the command below in the terminal.
+
+```sh
+pip3 install pipenv
+```
+4. Go into the virtual environment: 
+   
+```sh
 pipenv shell
 ```
-4. Apply migrations
+5. Apply migrations
    
 ```sh
 python manage.py makemigrations
@@ -53,28 +57,11 @@ python manage.py loaddata languages.yaml
 # NOTE: you can produce the same data in languages.yaml with
 # python manage.py dumpdata users.Language --format=yaml > languages.yaml
 ```
+6. Go to Users/keys_format.py
+- Copy this file to a new file called keys.py.
+- Add your Twitter API credentials in keys.py.
 
-5. Set up Twitter
-
-For this, first, set up your environment variables.
-
-You can take a look at .bash_profile_sample on how to set them up.
-
-Then, run:
-
-```
-python manage.py shell < setup_twitter.py
-```
-
-On Heroku:
-
-```
-heroku run manage.py shell
-
-exec(open("./setup_twitter.py").read())
-```
-
-6. Run the server:
+7. Run the server:
 
 ```sh
 python manage.py runserver <PORT>
@@ -82,7 +69,14 @@ OR
 python manage.py runserver
 ```
 
-7. Start the application opening the link shown in your terminal on a browser.
+8. Start the application opening the link shown in your terminal on a browser.
+
+9. Set up django-allauth.
+- First, register for a Twitter developer account.
+- Then, run ``python manage.py createsuperuser`` to create an admin account.
+- Go to http://127.0.0.1:8000/admin, and change the default site to from example.com to 127.0.0.1. Then, register your Twitter app's info there.
+- Also, make sure to set up keys.py (as explained above).
+- More about this process [here](https://wsvincent.com/django-allauth-tutorial/) and [here](https://django-allauth.readthedocs.io/en/latest/providers.html).
 
 ## Resources
 This is a part of the series of YouTube videos demonstrating how to build a real startup using Python and Javascript.
@@ -97,3 +91,6 @@ Useful resources for this project:
 The project was started by: YK Sugi. He's the guy who's running CS Dojo, a programming education YouTube channel.
 
 If you have any questions related to this project, please contact him on our Slack group.
+
+### Contributors
+See: [CONTRIBUTORS](https://github.com/ykdojo/editdojo/graphs/contributors)
