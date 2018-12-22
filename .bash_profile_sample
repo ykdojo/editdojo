@@ -1,0 +1,13 @@
+# This is a sample file for .bash_profile or .bash_rc
+# on your own computer. Your .bash_profile or .bash_rc
+# is used to define environment variables, which are
+# accessible through Python commands like os.environ['POSTGRES_DB'].
+export POSTGRES_DB='editdojo_database'
+export POSTGRES_USER='soundvision'
+export POSTGRES_PASSWORD='put the Postgres password here'
+
+export TWITTER_HOST='127.0.0.1'
+export TWITTER_CONSUMER_KEY='put the consumer key for Twitter API here'
+export TWITTER_CONSUMER_SECRET='put the consumer secret for Twitter API here'
+export TWITTER_ACCESS_KEY='put the access key for Twitter API here'
+export TWITTER_ACCESS_SECRET='put the access secret for Twitter API here'
