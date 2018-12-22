@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Dojo</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/editdojo.css' %}" />
+
+    <!-- the following is for material-kit -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link href="{% static 'css/material-kit.css' %}?v=2.0.5" rel="stylesheet" />
+  </head>
+
+  {% block content %}
+  {% endblock content %}
+</html>

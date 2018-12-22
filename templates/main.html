@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% load socialaccount %}
+
+{% block content %}
+<!-- The assumption of this page is that user is logged in already. -->
+<body class="login-page sidebar-collapse">
+  <nav
+    class="navbar navbar-transparent fixed-top navbar-expand-lg"
+    color-on-scroll="100"
+    id="sectionsNav"
+    style="position: absolute;"
+  >
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" href="#">Edit Dojo</a>
+        <!--
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="sr-only">Toggle</span>
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        -->
+      </div>
+      <div class="collapse navbar-collapse"></div>
+    </div>
+  </nav>
+  <div
+    class="page-header header-filter"
+    style="background-size: cover; background-position: top center;"
+  >
+    <div class="container">
+      <div class="row" style="margin:0 8px;">
+        <div class="card col-lg-6 col-md-6 ml-auto mr-auto">
+          <div class="section" style="padding:32px 0;">
+            <div class="card-body">
+              <h3>Congrats! You have successfully finished your signup flow.</h3>
+              <p>TODO: show other users' tweets here.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <nav class="float-left">
+          <ul>
+            <!-- <li><a href="#">Give us feedback</a></li>
+            <li><a href="#">Log out</a></li> -->
+          </ul>
+        </nav>
+        <div class="float-right">
+          <ul>
+            <!-- <li><a href="#">Give us feedback</a></li>
+            <li><a href="#">Log out</a></li> -->
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  {% include "common_js.html" %}
+  <script src="/static/js/language_selection.js" type="text/javascript"></script>
+</body>
+{% endblock content %}

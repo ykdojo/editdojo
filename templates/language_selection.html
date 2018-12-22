@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% load socialaccount %}
+
+{% block content %}
+<!-- The assumption of this page is that user is logged in already. -->
+<body class="login-page sidebar-collapse">
+  <nav
+    class="navbar navbar-transparent fixed-top navbar-expand-lg"
+    color-on-scroll="100"
+    id="sectionsNav"
+    style="position: absolute;"
+  >
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" href="#">Edit Dojo</a>
+        <!--
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="sr-only">Toggle</span>
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        -->
+      </div>
+      <div class="collapse navbar-collapse"></div>
+    </div>
+  </nav>
+  <div
+    class="page-header"
+    style="background-size: cover; 
+            background-position: top center; 
+            background-image: linear-gradient(to bottom, #9c27b0, #9024a2, #842094, #781d86, #6c1a79);"
+  >
+    <div class="container">
+      <div class="row" style="margin:0 8px;">
+        <div class="card col-lg-6 col-md-6 ml-auto mr-auto">
+          <div class="section" style="padding:32px 0;">
+            <div class="card-body">
+              <h3>Select your languages</h3>
+              <form action="/selectLanguages/" method="post">{% csrf_token %}
+                <label for="learning-select">I'm learning...</label>
+                <div id="learning-select" style="margin-bottom:24px;">
+                  <select
+                    class="custom-select ed-select"
+                    id="learning1"
+                    name="learning1"
+                    style="margin-bottom:4px;"
+                  >
+                    <option>Select Your Language</option>
+                    <option>English</option>
+                    <option>Japanese</option>
+                  </select>
+                </div>
+                <label for="fluent-select">I'm fluent in...</label>
+                <div id="fluent-select">
+                  <select
+                    class="custom-select ed-select"
+                    id="fluent1"
+                    name="fluent1"
+                    style="margin-bottom:4px;"
+                  >
+                    <option>Select Your Language</option>
+                    <option>English</option>
+                    <option>Japanese</option>
+                  </select>
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  style="margin-top:24px;"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <nav class="float-left">
+          <ul>
+            <!-- <li><a href="#">Give us feedback</a></li>
+            <li><a href="#">Log out</a></li> -->
+          </ul>
+        </nav>
+        <div class="float-right">
+          <ul>
+            <!-- <li><a href="#">Give us feedback</a></li>
+            <li><a href="#">Log out</a></li> -->
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  {% include "common_js.html" %}
+  <script src="/static/js/language_selection.js" type="text/javascript"></script>
+</body>
+{% endblock content %}
