@@ -126,3 +126,6 @@ dmypy.json
 
 # Pycharm
 .idea/
+
+# environment variables script for powershell
+.env_variables.ps1
