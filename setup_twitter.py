@@ -1,6 +1,7 @@
 from django.contrib.sites.models import Site
 from allauth.socialaccount.models import SocialApp
 import os
+import random
 
 # More about the following here: https://wsvincent.com/django-allauth-tutorial/
 first_site = Site.objects.get(pk=1)
