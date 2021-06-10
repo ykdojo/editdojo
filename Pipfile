@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "==2.1.2"
+django = "==2.2.24"
 psycopg2-binary = "==2.7.5"
 django-allauth = "*"
 tweepy = {editable = true, ref = "2efe385fc69385b57733f747ee62e6be12a1338b", git = "https://github.com/tweepy/tweepy.git"}
